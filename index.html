@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main Structure -->
+    <div class="container" id="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="brand">
+                <h1>
+                    <!-- Placeholder Logo SVG -->
+                    <svg viewBox="0 0 40 40"><path d="M20 40a20 20 0 110-40 20 20 0 010 40zM8 20a12 12 0 1024 0 12 12 0 00-24 0z" fill="#4a6cf7"></path><path d="M20 32a12 12 0 110-24 12 12 0 010 24zm0-4a8 8 0 100-16 8 8 0 000 16z" fill="#a3b8fc"></path></svg>
+                    <span>Untitled UI</span>
+                </h1>
+            </div>
+            <nav class="nav-section">
+                <h2>General</h2>
+                <ul>
+                    <!-- Replace placeholder SVGs with actual ones if available -->
+                    <li><a href="#" class="nav-item"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDIwIDIwIj48cGF0aCBzdHJva2U9IiM2NDc0OGIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0yLjUgMTBoMS42NjdDNy41IDEwIDcuNSA1IDEwIDVzMi41IDUgNS44MzMgNUgxNy41Ij48L3BhdGg+PHBhdGggc3Ryb2tlPSIjNjQ3NDhiIiBzdHJva2UtbGluZWNhcD0iUm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMS41IiBkPSJNNC4xNjcgNS44MzNMMCAxMGw0LjE2NyA0LjE2NyI+PC9wYXRoPjwvc3ZnPg==" alt=""> Dashboard</a></li>
+                    <li><a href="#" class="nav-item"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDIwIDIwIj48cGF0aCBzdHJva2U9IiM2NDc0OGIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xMy4zMzMgNC4xNjdoMy4zMzRhMS42NjcgMS42NjcgMCAwMSAxLjY2NiAxLjY2N3YxMEExLjY2NyAxLjY2NyAwIDAxMTYuNjY3IDE3LjVoLTMyLjVBMi41IDIuNSAwIDAxMCAxNUYxLjY2N2ExLjY2NyAxLjY2NyAwIDAxIDEuNjY2LTEuNjY3aDMuMzM0TDEwIDEuNjY3bDQuMTY3IDguMzMzek04LjMzMyAxMS42NjdIMTEuNjY3Ii8+PC9zdmc+" alt=""> Projects</a></li>
+                    <li><a href="#" class="nav-item"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDIwIDIwIj48cGF0aCBkPSJNMTUgOC4zMzNMMTAgMy4zMzMgNSAxMy4zMzNoMTBtMCAwcy0uODYyIDEuNjY3LTIuNSA0LjE2N2MtMS42MzcgMi41LTIuNSAyLjUtMi41IDIuNVYxNy41IiBzdHJva2U9IiM2NDc0OGIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48L3N2Zz4=" alt=""> Documents</a></li>
+                    <li><a href="#" class="nav-item active"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0iIzQ0NENFNyIgdmlld0JveD0iMCAwIDIwIDIwIj48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik01LjgzMyAyLjVIMTQuMTY3QTEuNjY3IDEuNjY3IDAgMDEgMTUuODMzIDQuMTY3VjE1LjgxYS4xNzguMTc4IDAgMDAuMDA2LjAxN2wtLjAwOS4wMDNhMS42NjcgMS42NjcgMCAwMS0xLjY2NyAxLjY2N0g1LjgzM0ExLjY2NyAxLjY2NyAwIDAxIDQuMTY3IDE1LjgzM1Y0LjE2N0ExLjY2NyAxLjY2NyAwIDAxIDUuODMzIDIuNXpNNi42NjcgNi42NjdhLjgzMy44MzMgMCAxMCAtMS42NjcgMCAuODMzLjgzMyAwIDAwIDEuNjY3IDB6TTEwLjgzMyA2LjY2N2EuODMzLjgzMyAwIDEwIC0xLjY2NiAwIC44MzMuODMzIDAgMDAgMS42NjYgMHpNMTUgNi42NjdhLjgzMy44MzMgMCAxMCAtMS42NjcgMCAuODMzLjgzMyAwIDAwIDEuNjY3IDB6TTYwLjgxIDBhLjgzMy44MzMgMCAxMCAtMS42NjcgMCAuODMzLjgzMyAwIDAwIDEuNjY3IDB6TTEwLjgxIDEwLjgzM2EuODMzLjgzMyAwIDEwIC0xLjY2NiAwIC44MzMuODMzIDAgMDAgMS42NjYgMHpNMTUgMTAuODMzYS44MzMuODMzIDAgMTAgLTEuNjY3IDAgLjgzMy44MzMgMCAwMCAxLjY2NyAwek02LjY2NyAxNS4xNjdhLjgzMy44MzMgMCAxMCAtMS42NjcgMCAuODMzLjgzMyAwIDAwIDEuNjY3IDB6TTEwLjgxIDE1LjE2N2EuODMzLjgzMyAwIDEwIC0xLjY2NiAwIC44MzMuODMzIDAgMDAgMS42NjYgMHoiIGNsaXAtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==" alt=""> Calendar</a></li>
+                </ul>
+            </nav>
+            <nav class="nav-section">
+                <h2>Untitled UI</h2>
+                <ul>
+                    <li><a href="#" class="nav-item"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDIwIDIwIj48cGF0aCBzdHJva2U9IiM2NDc0OGIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik04LjMzMyA4LjMzM2gtMy4zMzNWMUggMi41YTEuNjY3IDEuNjY3IDAgMDAgMS42NjcgMS42NjdWMTguMzMzQTEuNjY3IDEuNjY3IDAgMDAgNC4xNjcgMTcuNUgyLjV2LTMuNzVINC4xNjdhMS42NjcgMS42NjcgMCAwMSAxLjY2Ni0xLjY2N0g4LjMzMyIvPjxwYXRoIGQ9Ik0xNS44MzMgMTQuMTY3aC0zLjMzM2EuODMzLjgzMyAwIDAxLS44MzMtLjgzM1Y2LjY2N2EuODMzLjgzMyAwIDAxIC44MzMtLjgzM2gzLjMzM2EuODMzLjgzMyAwIDAxIC44MzMuODMzdjYuNjY3YS44MzMuODMzIDAgMDEtLjgzMy44MzN6IiBzdHJva2U9IiM2NDc0OGIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48L3N2Zz4=" alt=""> Reporting</a></li>
+                    <li><a href="#" class="nav-item"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDIwIDIwIj48cGF0aCBkPSJNNi42NjcgNS44MzNMMTAgMS42NjcgMTMuMzMzIDUuODMzVjguNzVhNy41IDcuNSAwIDAxLTUuNDEgNi45MTciIgIHN0cm9rZT0iIzY0NzQ4YiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSIvPjxwYXRoIHN0cm9rZT0iIzY0NzQ4YiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSIgZD0iTTE1LjYyNSA4LjQxN2ExMCAxMCAwIDAxLTEuMjUgNS4yNU04LjMzMyAxMS42NjdMMTAgMTMuMzMzbDIuMDgzLTEuNjY2Ii8+PC9zdmc+" alt=""> Tasks <span class="badge">X1</span></a></li>
+                    <li><a href="#" class="nav-item"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDIwIDIwIj48cGF0aCBkPSJNMTUuODMzIDUuODMzaC0xMS42NjZhMS42NjcgMS42NjcgMCAwMC0xLjY2NyAxLjY2N1YxNS44YS44MzMuODMzIDAgMDAuODM0LjgzM2gxNC4xNjdBLjgzMy44MzMgMCAwMCAxNy41IDE1Ljh2LTguMzNhMS42NjcgMS42NjcgMCAwMC0xLjY2Ny0xLjY2N3oiIHN0cm9rZT0iIzY0NzQ4YiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSIvPjxwYXRoIHN0cm9rZT0iIzY0NzQ4YiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSIgZD0iTTEzLjMzMyA1LjgzM1Y0LjE2N2ExLjY2NyAxLjY2NyAwIDAwLTEuNjY2LTEuNjY3SDguMzMzYTEuNjY3IDEuNjY3IDAgMDAgMCAzLjMzNEgxLjY2Nk02LjY2NyAxMC44MzNIMTMuMzMzTTEwIDguMzMzbDAgNSIvPjwvc3ZnPg==" alt=""> Users</a></li>
+                </ul>
+            </nav>
+            <nav class="nav-section">
+                <h2>Your Teams</h2>
+                <ul>
+                    <li><a href="#" class="nav-item team-item"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0iIzAwQURFMCIsInZpZXdCb3g9IjAgMCAyMCAyMCI+PGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMTAiLz48L3N2Zz4=" alt=""> Catalog <span class="badge">X1</span> <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iIzliYjljYiIgdmlld0JveD0iMCAwIDE2IDE2Ij48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00LjY0NiAxLjY0NmEuNS41IDAgMCAxIC43MDggMGw2IDZhLjUuNSAwIDAgMSAwIC43MDhsLTYgNmEuNS41IDAgMCAxLS43MDgtLjcwOEwxMC4yOTMgOCA0LjY0NiAyLjM1NGEuNS41IDAgMCAxIDAtLjcwOHoiLz48L3N2Zz4=" alt="" class="arrow"></a></li>
+                    <li><a href="#" class="nav-item team-item"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0iIzY2MDBDQyIsInZpZXdCb3g9IjAgMCAyMCAyMCI+PGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMTAiLz48L3N2Zz4=" alt=""> Warpspeed <span class="badge">X2</span> <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iIzliYjljYiIgdmlld0JveD0iMCAwIDE2IDE2Ij48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00LjY0NiAxLjY0NmEuNS41IDAgMCAxIC43MDggMGw2IDZhLjUuNSAwIDAgMSAwIC43MDhsLTYgNmEuNS41IDAgMCAxLS43MDgtLjcwOEwxMC4yOTMgOCA0LjY0NiAyLjM1NGEuNS41IDAgMCAxIDAtLjcwOHoiLz48L3N2Zz4=" alt="" class="arrow"></a></li>
+                    <li><a href="#" class="nav-item team-item"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0iIzAwNjZGRiIsInZpZXdCb3g9IjAgMCAyMCAyMCI+PGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMTAiLz48L3N2Zz4=" alt=""> Boltshift <span class="badge">X3</span> <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iIzliYjljYiIgdmlld0JveD0iMCAwIDE2IDE2Ij48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00LjY0NiAxLjY0NmEuNS41IDAgMCAxIC43MDggMGw2IDZhLjUuNSAwIDAgMSAwIC43MDhsLTYgNmEuNS41IDAgMCAxLS43MDgtLjcwOEwxMC4yOTMgOCA0LjY0NiAyLjM1NGEuNS41IDAgMCAxIDAtLjcwOHoiLz48L3N2Zz4=" alt="" class="arrow"></a></li>
+                    <li><a href="#" class="nav-item team-item"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0iIzAwQ0M5OSIsInZpZXdCb3g9IjAgMCAyMCAyMCI+PGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMTAiLz48L3N2Zz4=" alt=""> Sisyphus <span class="badge">X4</span> <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iIzliYjljYiIgdmlld0JveD0iMCAwIDE2IDE2Ij48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00LjY0NiAxLjY0NmEuNS41IDAgMCAxIC43MDggMGw2IDZhLjUuNSAwIDAgMSAwIC43MDhsLTYgNmEuNS41IDAgMCAxLS43MDgtLjcwOEwxMC4yOTMgOCA0LjY0NiAyLjM1NGEuNS41IDAgMCAxIDAtLjcwOHoiLz48L3N2Zz4=" alt="" class="arrow"></a></li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                 <!-- Placeholder User Image -->
+                <img src="data:image/png;base64,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" alt="User profile" class="profile-img">
+                <div class="profile-info">
+                    <p class="profile-name">Sienna Hewitt <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iIzliYjljYiIgdmlld0JveD0iMCAwIDE2IDE2Ij48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMi44NTQgNS42NDZsLTYgNmEuNS41IDAgMCAxLS43MDggMEwzLjE0NiA3LjM1NGEuNS41IDAgMSAxIC43MDgtLjcwOEw4IDExLjI5M2w1LjY0Ni01LjY0N2EuNS41IDAgMCAxIC43MDggMHoiIGNsaXAtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==" alt="Toggle" class="toggle-icon"></p>
+                    <p class="profile-email">SiennHewitt@gmail.com</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="main-content-wrapper">
+            <div class="main-content">
+                 <!-- Mobile Menu Toggle Button -->
+                <button class="btn-icon" id="menu-toggle-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/></svg>
+                </button>
+                <header class="main-header">
+                    <nav class="breadcrumb">
+                        <button class="btn-text">Home</button>
+                        <span>/</span>
+                        <button class="btn-text">Untitled UI</button>
+                        <span>/</span>
+                        <button class="btn-text active">Calendar</button>
+                    </nav>
+                </header>
+                <div class="calendar-container">
+                    <h1>Calendar</h1>
+                    <div class="calendar-controls">
+                        <div class="event-filters" id="event-filters">
+                            <button class="btn active" data-filter="all">All Events</button>
+                            <button class="btn" data-filter="shared">Shared</button>
+                            <button class="btn" data-filter="public">Public</button>
+                            <button class="btn" data-filter="archived">Archived</button>
+                        </div>
+                        <div class="search-box">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iIzY0NzQ4YiIgdmlld0JveD0iMCAwIDE2IDE2Ij48cGF0aCBkPSJNMTEuNzQyIDEwLjM0NGE2LjUgNi41IDAgMSAwLTEuMzk3IDEuMzk4aC0uMDAxYS45OTkuOTk5IDAgMCAwIC4wOTguMTE1bDMuODUgMy44NWEuNS41IDAgMCAwIC43MDgtLjcwN2wtMy44NS0zLjg1YS45OTkuOTk5IDAgMCAwLS4xMTUtLjA5OHptLTUuMjQyIDJhNS41IDUuNSAwIDEgMSAwLTExIDUuNSA1LjUgMCAwIDEgMCAxMXoiLz48L3N2Zz4=" alt="Search" class="search-icon">
+                            <input type="text" placeholder="Search events..." class="search-input" id="search-input">
+                            <span class="search-badge">X1</span>
+                        </div>
+                    </div>
+                    <div class="calendar-header">
+                        <div class="current-date">
+                             <!-- Note: Adjusted structure to match your CSS -->
+                            <div class="date-pill" id="date-pill">
+                                <strong class="month-abbr">Jan</strong>
+                                <span class="day-number">14</span>
+                            </div>
+                            <div class="date-range" id="date-range">
+                                <strong>Month Year</strong>
+                                <span>Date Range</span>
+                            </div>
+                        </div>
+                        <div class="calendar-actions">
+                            <div class="navigation-controls">
+                                <button class="btn-icon" aria-label="Previous" id="prev-btn"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMTYgMTYiPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTEwLjY0NiAxMi4zNTRhLjUuNSAwIDAgMSAwLS43MDhMMy4zNTQgOCAxNS41IDguMDAxYS41LjUgMCAwIDEgMC0xSDMuMzU0bDMuMjkzLTMuMjkzYS41LjUgMCAwIDEtLjcwOC0uNzA4bC00LjUgNC41YS41LjUgMCAwIDEgMCAuNzA4bDQuNSA0LjVhLjUuNSAwIDAgMSAuNzA4IDB6IiBjbGlwLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=" alt="Previous"></button>
+                                <button class="btn" id="today-btn">Today</button>
+                                <button class="btn-icon" aria-label="Next" id="next-btn"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMTYgMTYiPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTExLjM1NCAxMi4zNTRhLjUuNSAwIDAgMSAwLS43MDhMMTQuNjQ2IDhMMC41IDguMDAxYS41LjUgMCAwIDEgMC0xSDE0LjY0N0wxMS4zNTQgMy43MDdhLjUuNSAwIDAgMSAuNzA4LS43MDhsNC40OTkgNC41YS41LjUgMCAwIDEgMCAuNzA4bC00LjUgNC41YS41LjUgMCAwIDEtLjcwOCAweiIgY2xpcC1ydWxlPSJldmVub2RkIi8+PC9zdmc+" alt="Next"></button>
+                            </div>
+                            <select class="view-selector" aria-label="Calendar view" id="view-selector">
+                                <option value="month">Month View</option>
+                                <option value="week">Week View</option>
+                                <option value="day">Day View</option>
+                            </select>
+                            <button class="btn btn-primary" id="add-event-btn">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 3.33331V12.6666" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M3.33337 8H12.6667" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                Add event
+                            </button>
+                        </div>
+                    </div>
+                    <div class="calendar-grid" id="calendar-grid">
+                        <div class="calendar-weekdays" id="calendar-weekdays"></div>
+                        <!-- Changed class here to match your CSS -->
+                        <div class="calendar-dates" id="calendar-content"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Event Modal -->
+    <div class="event-modal" id="event-modal">
+        <div class="event-modal-content">
+            <h2>Add New Event</h2>
+            <form id="event-form" class="event-form">
+                <div class="form-group">
+                    <label for="event-title">Event Title</label>
+                    <input type="text" id="event-title" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="event-date">Date</label>
+                    <input type="date" id="event-date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="event-time">Time (optional)</label>
+                    <input type="time" id="event-time" name="time">
+                </div>
+                <div class="form-group">
+                    <label for="event-type">Type/Color</label>
+                    <select id="event-type" name="type">
+                        <option value="black">Default (Gray)</option>
+                        <option value="purple">Team Meeting (Purple)</option>
+                        <option value="green">Lunch Break (Green)</option>
+                        <option value="pink">Meeting (Pink)</option>
+                        <option value="blu">Planning (Blue)</option>
+                        <option value="oran">Reminder (Orange)</option>
+                    </select>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn" id="cancel-event-btn">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Add Event</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="script.js"></script>
+
+</body>
+</html>
